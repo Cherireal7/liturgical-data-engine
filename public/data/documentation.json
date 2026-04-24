@@ -1,0 +1,411 @@
+{
+  "meta": {
+    "title": "Ethiopian Liturgical Calendar Engine",
+    "subtitle": "Documentation",
+    "description": "A validation and research environment for the Ethiopian liturgical calendar engine being developed for a Christian worship mobile app targeting Ethiopian Lutheran congregations.",
+    "route": "/documentation"
+  },
+  "sections": [
+    {
+      "id": "overview",
+      "type": "prose",
+      "heading": "Overview",
+      "body": "This tool is a validation and research environment for the Ethiopian liturgical calendar engine being developed for a Christian worship mobile app targeting Ethiopian Lutheran (Mekane Yesus) congregations. The engine must correctly compute the Ethiopian church year — movable feasts, fasting periods, seasons, and the four-year Evangelist cycle — entirely offline, using the Ethiopian calendar as the native date system.\n\nThis documentation explains the problem we are solving, what we analyzed, how the algorithm works, and how we intend to integrate it into the final application."
+    },
+    {
+      "id": "problem",
+      "type": "prose_with_list",
+      "heading": "The Problem",
+      "intro": "Most Ethiopian calendar tools solve the civil calendar problem — converting Gregorian dates to Ethiopian dates, displaying the 13-month structure, handling Pagume. That is the easy layer.\n\nThe worship app requires something deeper: a liturgical calendar engine. This means knowing not just what day it is in the Ethiopian calendar, but what the church year says about that day — which season it is, whether it is a fasting day, which feast is being observed, and which gospel year the church is in.\n\nThe specific challenges we identified:",
+      "items": [
+        {
+          "heading": "The new year mismatch",
+          "body": "The Ethiopian civil year begins on Meskerem 1 (September 11 or 12). The Lutheran church year begins at Advent, which falls in late November or December. These two year starts do not align, and no existing Mekane Yesus app has cleanly solved this. Several published apps skip seasons or cut content at the year boundary because they tried to force one year structure onto the other."
+        },
+        {
+          "heading": "The denomination gap",
+          "body": "The Ethiopian Orthodox Tewahedo Church (EOTC) has a well-documented calendrical system. The Mekane Yesus church follows the same Ethiopian calendar for feast dates and fasting periods but has its own lectionary — its own assigned readings, sermon themes, and commemorations. No clean public dataset exists for this layer. It must be sourced directly from the Ethiopian Evangelical Church Mekane Yesus (EECMY)."
+        },
+        {
+          "heading": "The four-year Evangelist cycle",
+          "body": "The Ethiopian church year is organized into a repeating four-year cycle, each year named after one of the four Evangelists — John, Matthew, Mark, and Luke. Each Evangelist year carries its own gospel readings and sermon themes. Any correct lectionary implementation must know which Evangelist year it is computing for."
+        },
+        {
+          "heading": "Offline-first requirement",
+          "body": "The app must work without internet access, which is a real constraint for Ethiopian users. This means all calendar computation and all liturgical data must be precomputed and bundled in the app. No live API calls."
+        }
+      ]
+    },
+    {
+      "id": "analysis",
+      "type": "prose_with_subsections",
+      "heading": "What We Analyzed",
+      "subsections": [
+        {
+          "id": "repos",
+          "heading": "Three open source repositories",
+          "intro": "We analyzed three existing Ethiopian calendar implementations:",
+          "items": [
+            {
+              "name": "Kenat",
+              "language": "JavaScript",
+              "description": "The most complete modern implementation. Contains a full Bahire Hasab engine, Gregorian-to-Ethiopian and Ethiopian-to-Gregorian conversion, all movable Christian feasts, fasting periods with start and end dates, Islamic holiday computation, and full Amharic and English localization. Well tested. This is the primary source for our engine."
+            },
+            {
+              "name": "AbushakirJs",
+              "language": "TypeScript",
+              "description": "An older class-based implementation of the same algorithm. Uses the same tewsak offset table. Useful as a cross-reference to validate the math."
+            },
+            {
+              "name": "Ethiocal",
+              "language": "Go",
+              "description": "The same Bahire Hasab algorithm implemented in Go. Used only as an independent verification of the intermediate computation values."
+            }
+          ]
+        },
+        {
+          "id": "bahire-hasab-what",
+          "heading": "What Bahire Hasab actually is",
+          "body": "Bahire Hasab — literally \"the calculation of the sea\" in Ge'ez — is the traditional Ethiopian method for computing the church year. It derives from the Alexandrian computus, the same mathematical tradition that the Coptic Church uses, which in turn traces back to the calculations of Anatolius of Laodicea in the third century.\n\nThe system computes a single anchor point each year — the Fast of Nineveh — and then derives every other movable feast as a fixed offset from that anchor. This is elegant: once you know Nineveh, you know Easter, Ascension, Pentecost, and all fasting periods."
+        }
+      ]
+    },
+    {
+      "id": "algorithm",
+      "type": "algorithm_steps",
+      "heading": "The Algorithm",
+      "steps": [
+        {
+          "step": 1,
+          "heading": "Establish the cosmic year",
+          "code": "ameteAlem = ethiopianYear + 5500",
+          "explanation": "Amete Alem means \"year of the world\" in Ge'ez. The Ethiopian Orthodox Church counts years from the date of creation, which by their reckoning was 5500 years before the Incarnation. Adding 5500 to the Ethiopian year gives the cosmic year count. This number drives everything else."
+        },
+        {
+          "step": 2,
+          "heading": "Compute the lunar constants",
+          "code": "medeb   = ameteAlem % 19\nwenber  = medeb === 0 ? 18 : medeb - 1\nabektie = (wenber × 11) % 30\nmetqi   = (wenber × 19) % 30",
+          "explanation": "The number 19 here is the Metonic cycle — the period after which lunar phases repeat on the same calendar dates. Every 19 years the moon returns to the same position relative to the solar year. This is the same cycle used in the Western computus for Easter calculation. Medeb is the position in the 19-year cycle. Wenber is the adjusted lunar base. Abektie and Metqi are intermediate lunar values used to find the full moon that anchors the fast."
+        },
+        {
+          "step": 3,
+          "heading": "Find the Beale Metqi (full moon day)",
+          "code": "bealeMetqiMonth = metqi > 14 ? Tir (month 5) : Yekatit (month 6)\nbealeMetqiDay   = metqi",
+          "explanation": "The Beale Metqi is the liturgical full moon — the ecclesiastical new moon date that anchors the fast cycle. Depending on whether metqi falls above or below 14, the full moon lands in either Tir or Yekatit."
+        },
+        {
+          "step": 4,
+          "heading": "Find the day of the week and apply the tewsak",
+          "code": "tewsakMap = {\n  Sunday: 7,  Monday: 6,  Tuesday: 5,\n  Wednesday: 4,  Thursday: 3,  Friday: 2,  Saturday: 8\n}\n\nmebajaHamer = bealeMetqiDay + tewsakOfBealeMetqiWeekday",
+          "explanation": "The Beale Metqi day of the week is computed. The tewsak (\"addition\" in Ge'ez) is the number of days to add to reach the next Monday, which is where Nineveh begins. Each weekday has a fixed tewsak value."
+        },
+        {
+          "step": 5,
+          "heading": "Derive the Fast of Nineveh",
+          "body": "The Fast of Nineveh is the anchor. Its date is mebajaHamer in either Tir or Yekatit, adjusted for month overflow. From this single date, every other feast and fast in the Ethiopian church year is computed by adding a fixed number of days."
+        }
+      ],
+      "tewsakTable": {
+        "heading": "Movable feast offsets from Nineveh",
+        "columns": [
+          "Feast",
+          "Amharic",
+          "Days from Nineveh"
+        ],
+        "rows": [
+          {
+            "feast": "Fast of Nineveh",
+            "amharic": "ጾመ ነነዌ",
+            "offset": 0
+          },
+          {
+            "feast": "Great Lent begins",
+            "amharic": "ዐቢይ ጾም",
+            "offset": 14
+          },
+          {
+            "feast": "Mid-Lent Sunday",
+            "amharic": "ደብረ ዘይት",
+            "offset": 41
+          },
+          {
+            "feast": "Palm Sunday",
+            "amharic": "ሆሳዕና",
+            "offset": 62
+          },
+          {
+            "feast": "Good Friday",
+            "amharic": "ስቅለት",
+            "offset": 67
+          },
+          {
+            "feast": "Easter — Fasika",
+            "amharic": "ፋሲካ",
+            "offset": 69
+          },
+          {
+            "feast": "Meeting of Priests",
+            "amharic": "ርክበ ካህናት",
+            "offset": 93
+          },
+          {
+            "feast": "Ascension",
+            "amharic": "ዕርገት",
+            "offset": 108
+          },
+          {
+            "feast": "Pentecost",
+            "amharic": "ጰራቅሊጦስ",
+            "offset": 118
+          },
+          {
+            "feast": "Apostles' Fast begins",
+            "amharic": "ጾመ ሐዋርያት",
+            "offset": 119
+          },
+          {
+            "feast": "Fast of Salvation",
+            "amharic": "ጾመ ድኅነት",
+            "offset": 121
+          }
+        ],
+        "note": "Easter is offset +69 from the Fast of Nineveh. This is the Alexandrian computus expressed in Ethiopian calendar arithmetic."
+      }
+    },
+    {
+      "id": "fixed-feasts",
+      "type": "tables",
+      "heading": "Fixed Feasts and Fasting Periods",
+      "intro": "In addition to the movable feasts, the Ethiopian church year has fixed observances keyed by Ethiopian calendar date:",
+      "tables": [
+        {
+          "id": "fixed-feasts-table",
+          "heading": "Fixed feasts",
+          "columns": [
+            "Feast",
+            "Amharic",
+            "Ethiopian Date",
+            "Approx. Gregorian"
+          ],
+          "rows": [
+            {
+              "feast": "Ethiopian New Year",
+              "amharic": "እንቁጣጣሽ",
+              "ethiopianDate": "Meskerem 1",
+              "gregorian": "Sep 11/12"
+            },
+            {
+              "feast": "Finding of the True Cross",
+              "amharic": "መስቀል",
+              "ethiopianDate": "Meskerem 17",
+              "gregorian": "Sep 27"
+            },
+            {
+              "feast": "Ethiopian Christmas",
+              "amharic": "ገና",
+              "ethiopianDate": "Tahsas 29",
+              "gregorian": "Jan 7"
+            },
+            {
+              "feast": "Ethiopian Epiphany",
+              "amharic": "ጥምቀት",
+              "ethiopianDate": "Tir 11",
+              "gregorian": "Jan 19"
+            }
+          ]
+        },
+        {
+          "id": "fixed-fasts-table",
+          "heading": "Fixed fasting periods",
+          "columns": [
+            "Fast",
+            "Amharic",
+            "Start",
+            "End"
+          ],
+          "rows": [
+            {
+              "fast": "Fast of the Prophets",
+              "amharic": "ጾመ ነቢያት",
+              "start": "Hidar 15",
+              "end": "Tahsas 28"
+            },
+            {
+              "fast": "Fast of Filseta",
+              "amharic": "ፍልሰታ",
+              "start": "Nehase 1",
+              "end": "Nehase 14"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "four-year-cycle",
+      "type": "prose_with_table",
+      "heading": "The Four-Year Evangelist Cycle",
+      "body": "The Ethiopian Orthodox and Mekane Yesus churches organize the liturgical year into a repeating four-year cycle. Each year is named after one of the four Evangelists and is associated with a particular gospel as the primary gospel for that year's readings.",
+      "code": "ameteAlem % 4 → 0 = John (ዮሐንስ)\n                1 = Matthew (ማቴዎስ)\n                2 = Mark (ማርቆስ)\n                3 = Luke (ሉቃስ)",
+      "currentYear": {
+        "ethiopianYear": 2017,
+        "evangelist": "Matthew",
+        "amharic": "ማቴዎስ",
+        "gregorianRange": "2024–2025"
+      },
+      "implications": [
+        "Sermon themes, gospel readings, and some commemorations change depending on which Evangelist year it is.",
+        "Any correct implementation of the Mekane Yesus lectionary must track the Evangelist year and serve the appropriate content.",
+        "The four-year cycle also means that Easter shifts considerably across a four-year window. In some years Fasika falls in Miazia (April range), in others in Megabit (March range).",
+        "This affects how many Sundays fall in certain seasons and how the entire movable feast arc is distributed across the civil year.",
+        "The Four Years view in this tool exists specifically to visualize this variation."
+      ]
+    },
+    {
+      "id": "solution",
+      "type": "prose_with_subsections",
+      "heading": "How We Intend to Solve It",
+      "subsections": [
+        {
+          "id": "architecture",
+          "heading": "Architecture decision",
+          "body": "The app will run the liturgical engine entirely in the Ethiopian calendar. Ethiopian dates are the native coordinate system. Gregorian dates are only used for conversion at the display layer or for cross-referencing with the LSB lectionary data.\n\nThe engine is structured in three layers:",
+          "layers": [
+            {
+              "number": 1,
+              "name": "Civil calendar",
+              "description": "Gregorian↔Ethiopian conversion, 13-month structure, leap year handling, Pagume. Sourced from Kenat."
+            },
+            {
+              "number": 2,
+              "name": "Liturgical rules engine",
+              "description": "Bahire Hasab computation, movable feast resolution, fasting period assignment, fixed feast lookup, Evangelist year classification. Built in this project."
+            },
+            {
+              "number": 3,
+              "name": "Denominational content",
+              "description": "Mekane Yesus lectionary readings, sermon themes, Sunday propers, commemorations. This layer is pending. We are in the process of obtaining the official dataset from EECMY. Once received, it will be encoded as a structured JSON dataset keyed by Evangelist year and week number, then merged with the engine output at query time."
+            }
+          ]
+        },
+        {
+          "id": "precomputed",
+          "heading": "Precomputed dataset",
+          "body": "For the offline-first mobile app, the engine output for Ethiopian years 2010–2030 will be precomputed and bundled as a static JSON file. This covers all feast dates, fasting periods, and Evangelist year assignments for the range 2017–2038 in the Gregorian calendar — more than sufficient for the initial release. The computation will be re-run and the bundle updated as needed for future years."
+        },
+        {
+          "id": "validation",
+          "heading": "Validation process",
+          "body": "Before integrating into the app, every computed feast date is being cross-checked against:",
+          "sources": [
+            "Published EOTC official calendars",
+            "The Kenat test suite (which contains verified dates)",
+            "The AbushakirJs test suite as an independent verification",
+            "Manual spot checks against known Fasika dates for recent years"
+          ],
+          "closing": "This tool is the validation environment for that process."
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "type": "status_table",
+      "heading": "Current Status",
+      "columns": [
+        "Component",
+        "Status"
+      ],
+      "rows": [
+        {
+          "component": "Bahire Hasab engine",
+          "status": "complete",
+          "note": "Validated against three independent implementations"
+        },
+        {
+          "component": "Gregorian↔Ethiopian conversion",
+          "status": "complete",
+          "note": "Sourced from Kenat"
+        },
+        {
+          "component": "Movable feast computation",
+          "status": "complete",
+          "note": null
+        },
+        {
+          "component": "Fixed feast dataset",
+          "status": "complete",
+          "note": null
+        },
+        {
+          "component": "Fasting period resolver",
+          "status": "complete",
+          "note": null
+        },
+        {
+          "component": "Four-year Evangelist cycle",
+          "status": "complete",
+          "note": null
+        },
+        {
+          "component": "Precomputed dataset (ET 2010–2030)",
+          "status": "complete",
+          "note": null
+        },
+        {
+          "component": "Mekane Yesus lectionary dataset",
+          "status": "pending",
+          "note": "Awaiting EECMY"
+        },
+        {
+          "component": "Mobile app integration",
+          "status": "pending",
+          "note": "Begins after dataset received"
+        }
+      ],
+      "statusValues": {
+        "complete": {
+          "label": "Complete",
+          "color": "green"
+        },
+        "pending": {
+          "label": "Pending",
+          "color": "amber"
+        },
+        "inProgress": {
+          "label": "In Progress",
+          "color": "blue"
+        }
+      }
+    },
+    {
+      "id": "contact",
+      "type": "contact",
+      "heading": "Contact",
+      "body": "This project is being developed by Lukas Brocker and Cherinet, working independently as open source collaborators. If you have access to Mekane Yesus liturgical data, EECMY calendar publications, or EOTC sanctoral calendar materials and are willing to contribute, we would like to hear from you.",
+      "lookingFor": [
+        "The official EECMY four-year lectionary tables (readings by Evangelist year and week)",
+        "Mekane Yesus Sunday sermon theme assignments",
+        "EOTC sanctoral calendar data (saints days keyed by Ethiopian date)",
+        "Any published Mekane Yesus worship resource in digital form"
+      ],
+      "links": [
+        {
+          "label": "Telegram",
+          "type": "telegram",
+          "value": "@cheri_figma",
+          "href": "https://t.me/cheri_figma"
+        },
+        {
+          "label": "Email",
+          "type": "email",
+          "value": "cheridemeke7@gmail.com",
+          "href": "mailto:cheridemeke7@gmail.com"
+        }
+      ],
+      "projectDescription": "Christian Worship App for Ethiopian Lutheran Congregations"
+    }
+  ],
+  "footer": {
+    "attribution": "Bahire Hasab computation ported from the open source Kenat project (MIT license). Ethiopian calendar conversion algorithm from Kenat. Original Bahire Hasab system derived from the Alexandrian computus tradition of the Ethiopian Orthodox Tewahedo Church.",
+    "closing": "Soli Deo Gloria"
+  }
+}

@@ -1,0 +1,1808 @@
+[
+  {
+    "year": 2010,
+    "evangelist": {
+      "name": "ማርቆስ",
+      "nameEn": "Mark"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7510,
+      "medeb": 5,
+      "wenber": 4,
+      "abektie": 14,
+      "metqi": 16,
+      "bealeMetqiMonth": 1,
+      "tewsak": 5,
+      "mebajaHamer": 21,
+      "nineveh": {
+        "month": 5,
+        "day": 21,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 5,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 2,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 7,
+          "day": 23,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 7,
+          "day": 28,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 7,
+          "day": 30,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 8,
+          "day": 24,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 9,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 9,
+          "day": 19,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 9,
+          "day": 20,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 9,
+          "day": 22,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2018-04-08"
+  },
+  {
+    "year": 2011,
+    "evangelist": {
+      "name": "ሉቃስ",
+      "nameEn": "Luke"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7511,
+      "medeb": 6,
+      "wenber": 5,
+      "abektie": 25,
+      "metqi": 5,
+      "bealeMetqiMonth": 2,
+      "tewsak": 6,
+      "mebajaHamer": 11,
+      "nineveh": {
+        "month": 6,
+        "day": 11,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 25,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 22,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 13,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 18,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 20,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 14,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 29,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 9,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 10,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 12,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2019-04-28"
+  },
+  {
+    "year": 2012,
+    "evangelist": {
+      "name": "ዮሐንስ",
+      "nameEn": "John"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7512,
+      "medeb": 7,
+      "wenber": 6,
+      "abektie": 6,
+      "metqi": 24,
+      "bealeMetqiMonth": 1,
+      "tewsak": 8,
+      "mebajaHamer": 2,
+      "nineveh": {
+        "month": 6,
+        "day": 2,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 16,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 13,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 4,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 9,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 11,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 5,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 20,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 9,
+          "day": 30,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 1,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 3,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2020-04-19"
+  },
+  {
+    "year": 2013,
+    "evangelist": {
+      "name": "ማቴዎስ",
+      "nameEn": "Matthew"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7513,
+      "medeb": 8,
+      "wenber": 7,
+      "abektie": 17,
+      "metqi": 13,
+      "bealeMetqiMonth": 2,
+      "tewsak": 2,
+      "mebajaHamer": 15,
+      "nineveh": {
+        "month": 6,
+        "day": 15,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 29,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 26,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 17,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 22,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 24,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 18,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 10,
+          "day": 3,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 13,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 14,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 16,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2021-05-02"
+  },
+  {
+    "year": 2014,
+    "evangelist": {
+      "name": "ማርቆስ",
+      "nameEn": "Mark"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7514,
+      "medeb": 9,
+      "wenber": 8,
+      "abektie": 28,
+      "metqi": 2,
+      "bealeMetqiMonth": 2,
+      "tewsak": 5,
+      "mebajaHamer": 7,
+      "nineveh": {
+        "month": 6,
+        "day": 7,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 21,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 18,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 9,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 14,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 16,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 10,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 25,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 5,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 6,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 8,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2022-04-24"
+  },
+  {
+    "year": 2015,
+    "evangelist": {
+      "name": "ሉቃስ",
+      "nameEn": "Luke"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7515,
+      "medeb": 10,
+      "wenber": 9,
+      "abektie": 9,
+      "metqi": 21,
+      "bealeMetqiMonth": 1,
+      "tewsak": 8,
+      "mebajaHamer": 29,
+      "nineveh": {
+        "month": 5,
+        "day": 29,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 13,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 10,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 1,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 6,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 8,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 2,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 17,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 9,
+          "day": 27,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 9,
+          "day": 28,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 9,
+          "day": 30,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2023-04-16"
+  },
+  {
+    "year": 2016,
+    "evangelist": {
+      "name": "ዮሐንስ",
+      "nameEn": "John"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7516,
+      "medeb": 11,
+      "wenber": 10,
+      "abektie": 20,
+      "metqi": 10,
+      "bealeMetqiMonth": 2,
+      "tewsak": 8,
+      "mebajaHamer": 18,
+      "nineveh": {
+        "month": 6,
+        "day": 18,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 7,
+          "day": 2,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 29,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 20,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 25,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 27,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 21,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 10,
+          "day": 6,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 16,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 17,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 19,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2024-05-05"
+  },
+  {
+    "year": 2017,
+    "evangelist": {
+      "name": "ማቴዎስ",
+      "nameEn": "Matthew"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7517,
+      "medeb": 12,
+      "wenber": 11,
+      "abektie": 1,
+      "metqi": 29,
+      "bealeMetqiMonth": 1,
+      "tewsak": 4,
+      "mebajaHamer": 3,
+      "nineveh": {
+        "month": 6,
+        "day": 3,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 17,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 14,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 5,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 10,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 12,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 6,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 21,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 1,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 2,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 4,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2025-04-20"
+  },
+  {
+    "year": 2018,
+    "evangelist": {
+      "name": "ማርቆስ",
+      "nameEn": "Mark"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7518,
+      "medeb": 13,
+      "wenber": 12,
+      "abektie": 12,
+      "metqi": 18,
+      "bealeMetqiMonth": 1,
+      "tewsak": 7,
+      "mebajaHamer": 25,
+      "nineveh": {
+        "month": 5,
+        "day": 25,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 9,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 6,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 7,
+          "day": 27,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 2,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 4,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 8,
+          "day": 28,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 13,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 9,
+          "day": 23,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 9,
+          "day": 24,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 9,
+          "day": 26,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2026-04-12"
+  },
+  {
+    "year": 2019,
+    "evangelist": {
+      "name": "ሉቃስ",
+      "nameEn": "Luke"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7519,
+      "medeb": 14,
+      "wenber": 13,
+      "abektie": 23,
+      "metqi": 7,
+      "bealeMetqiMonth": 2,
+      "tewsak": 8,
+      "mebajaHamer": 15,
+      "nineveh": {
+        "month": 6,
+        "day": 15,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 29,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 26,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 17,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 22,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 24,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 18,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 10,
+          "day": 3,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 13,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 14,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 16,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2027-05-02"
+  },
+  {
+    "year": 2020,
+    "evangelist": {
+      "name": "ዮሐንስ",
+      "nameEn": "John"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7520,
+      "medeb": 15,
+      "wenber": 14,
+      "abektie": 4,
+      "metqi": 26,
+      "bealeMetqiMonth": 1,
+      "tewsak": 3,
+      "mebajaHamer": 29,
+      "nineveh": {
+        "month": 5,
+        "day": 29,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 13,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 10,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 1,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 6,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 8,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 2,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 17,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 9,
+          "day": 27,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 9,
+          "day": 28,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 9,
+          "day": 30,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2028-04-16"
+  },
+  {
+    "year": 2021,
+    "evangelist": {
+      "name": "ማቴዎስ",
+      "nameEn": "Matthew"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7521,
+      "medeb": 16,
+      "wenber": 15,
+      "abektie": 15,
+      "metqi": 15,
+      "bealeMetqiMonth": 1,
+      "tewsak": 6,
+      "mebajaHamer": 21,
+      "nineveh": {
+        "month": 5,
+        "day": 21,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 5,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 2,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 7,
+          "day": 23,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 7,
+          "day": 28,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 7,
+          "day": 30,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 8,
+          "day": 24,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 9,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 9,
+          "day": 19,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 9,
+          "day": 20,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 9,
+          "day": 22,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2029-04-08"
+  },
+  {
+    "year": 2022,
+    "evangelist": {
+      "name": "ማርቆስ",
+      "nameEn": "Mark"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7522,
+      "medeb": 17,
+      "wenber": 16,
+      "abektie": 26,
+      "metqi": 4,
+      "bealeMetqiMonth": 2,
+      "tewsak": 7,
+      "mebajaHamer": 11,
+      "nineveh": {
+        "month": 6,
+        "day": 11,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 25,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 22,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 13,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 18,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 20,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 14,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 29,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 9,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 10,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 12,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2030-04-28"
+  },
+  {
+    "year": 2023,
+    "evangelist": {
+      "name": "ሉቃስ",
+      "nameEn": "Luke"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7523,
+      "medeb": 18,
+      "wenber": 17,
+      "abektie": 7,
+      "metqi": 23,
+      "bealeMetqiMonth": 1,
+      "tewsak": 3,
+      "mebajaHamer": 26,
+      "nineveh": {
+        "month": 5,
+        "day": 26,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 10,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 7,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 7,
+          "day": 28,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 3,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 5,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 8,
+          "day": 29,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 14,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 9,
+          "day": 24,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 9,
+          "day": 25,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 9,
+          "day": 27,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2031-04-13"
+  },
+  {
+    "year": 2024,
+    "evangelist": {
+      "name": "ዮሐንስ",
+      "nameEn": "John"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7524,
+      "medeb": 0,
+      "wenber": 18,
+      "abektie": 18,
+      "metqi": 12,
+      "bealeMetqiMonth": 2,
+      "tewsak": 3,
+      "mebajaHamer": 15,
+      "nineveh": {
+        "month": 6,
+        "day": 15,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 29,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 26,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 17,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 22,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 24,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 18,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 10,
+          "day": 3,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 13,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 14,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 16,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2032-05-02"
+  },
+  {
+    "year": 2025,
+    "evangelist": {
+      "name": "ማቴዎስ",
+      "nameEn": "Matthew"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7525,
+      "medeb": 1,
+      "wenber": 0,
+      "abektie": 0,
+      "metqi": 30,
+      "bealeMetqiMonth": 1,
+      "tewsak": 7,
+      "mebajaHamer": 7,
+      "nineveh": {
+        "month": 6,
+        "day": 7,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 21,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 18,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 9,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 14,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 16,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 10,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 25,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 5,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 6,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 8,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2033-04-24"
+  },
+  {
+    "year": 2026,
+    "evangelist": {
+      "name": "ማርቆስ",
+      "nameEn": "Mark"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7526,
+      "medeb": 2,
+      "wenber": 1,
+      "abektie": 11,
+      "metqi": 19,
+      "bealeMetqiMonth": 1,
+      "tewsak": 3,
+      "mebajaHamer": 22,
+      "nineveh": {
+        "month": 5,
+        "day": 22,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 6,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 3,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 7,
+          "day": 24,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 7,
+          "day": 29,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 1,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 8,
+          "day": 25,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 10,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 9,
+          "day": 20,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 9,
+          "day": 21,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 9,
+          "day": 23,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2034-04-09"
+  },
+  {
+    "year": 2027,
+    "evangelist": {
+      "name": "ሉቃስ",
+      "nameEn": "Luke"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7527,
+      "medeb": 3,
+      "wenber": 2,
+      "abektie": 22,
+      "metqi": 8,
+      "bealeMetqiMonth": 2,
+      "tewsak": 4,
+      "mebajaHamer": 12,
+      "nineveh": {
+        "month": 6,
+        "day": 12,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 26,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 23,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 14,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 19,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 21,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 15,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 30,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 10,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 11,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 13,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2035-04-29"
+  },
+  {
+    "year": 2028,
+    "evangelist": {
+      "name": "ዮሐንስ",
+      "nameEn": "John"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7528,
+      "medeb": 4,
+      "wenber": 3,
+      "abektie": 3,
+      "metqi": 27,
+      "bealeMetqiMonth": 1,
+      "tewsak": 6,
+      "mebajaHamer": 3,
+      "nineveh": {
+        "month": 6,
+        "day": 3,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 17,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 14,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 5,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 10,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 12,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 6,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 21,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 1,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 2,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 4,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2036-04-20"
+  },
+  {
+    "year": 2029,
+    "evangelist": {
+      "name": "ማቴዎስ",
+      "nameEn": "Matthew"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7529,
+      "medeb": 5,
+      "wenber": 4,
+      "abektie": 14,
+      "metqi": 16,
+      "bealeMetqiMonth": 1,
+      "tewsak": 2,
+      "mebajaHamer": 18,
+      "nineveh": {
+        "month": 5,
+        "day": 18,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 2,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 6,
+          "day": 29,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 7,
+          "day": 20,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 7,
+          "day": 25,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 7,
+          "day": 27,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 8,
+          "day": 21,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 6,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 9,
+          "day": 16,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 9,
+          "day": 17,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 9,
+          "day": 19,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2037-04-05"
+  },
+  {
+    "year": 2030,
+    "evangelist": {
+      "name": "ማርቆስ",
+      "nameEn": "Mark"
+    },
+    "bahireHasab": {
+      "ameteAlem": 7530,
+      "medeb": 6,
+      "wenber": 5,
+      "abektie": 25,
+      "metqi": 5,
+      "bealeMetqiMonth": 2,
+      "tewsak": 3,
+      "mebajaHamer": 8,
+      "nineveh": {
+        "month": 6,
+        "day": 8,
+        "name": "ጾመ ነነዌ",
+        "nameEn": "Fast of Nineveh"
+      },
+      "feasts": {
+        "ABIY_TSOME": {
+          "month": 6,
+          "day": 22,
+          "name": "ዐቢይ ጾም",
+          "nameEn": "Great Lent"
+        },
+        "DEBRE_ZEIT": {
+          "month": 7,
+          "day": 19,
+          "name": "ደብረ ዘይት",
+          "nameEn": "Mount of Olives"
+        },
+        "HOSANNA": {
+          "month": 8,
+          "day": 10,
+          "name": "ሆሣዕና",
+          "nameEn": "Palm Sunday"
+        },
+        "SIKLET": {
+          "month": 8,
+          "day": 15,
+          "name": "ስቅለት",
+          "nameEn": "Good Friday"
+        },
+        "TINSAYE": {
+          "month": 8,
+          "day": 17,
+          "name": "ትንሣኤ",
+          "nameEn": "Fasika (Easter)"
+        },
+        "RIKBE_KAHNAT": {
+          "month": 9,
+          "day": 11,
+          "name": "ርክበ ካህናት",
+          "nameEn": "Meeting of Priests"
+        },
+        "ERGET": {
+          "month": 9,
+          "day": 26,
+          "name": "ዕርገት",
+          "nameEn": "Ascension"
+        },
+        "PARACLETE": {
+          "month": 10,
+          "day": 6,
+          "name": "ጰራቅሊጦስ",
+          "nameEn": "Pentecost"
+        },
+        "TSOME_HAWARYAT": {
+          "month": 10,
+          "day": 7,
+          "name": "ጾመ ሐዋርያት",
+          "nameEn": "Apostles' Fast"
+        },
+        "TSOME_DIHENET": {
+          "month": 10,
+          "day": 9,
+          "name": "ጾመ ድኅነት",
+          "nameEn": "Fast of Salvation"
+        }
+      }
+    },
+    "fasikaGc": "2038-04-25"
+  }
+]
