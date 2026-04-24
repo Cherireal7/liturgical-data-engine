@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <!-- Gold outer ring -->
+  <circle cx="50" cy="50" r="49" fill="#C8943A" />
+  <!-- Blue field -->
+  <circle cx="50" cy="50" r="42" fill="#1B3A6B" />
+  <!-- White rose petals (5 large outer) -->
+  <ellipse cx="50" cy="14" rx="7" ry="10" fill="white" transform="rotate(0 50 50)" />
+  <ellipse cx="50" cy="14" rx="7" ry="10" fill="white" transform="rotate(72 50 50)" />
+  <ellipse cx="50" cy="14" rx="7" ry="10" fill="white" transform="rotate(144 50 50)" />
+  <ellipse cx="50" cy="14" rx="7" ry="10" fill="white" transform="rotate(216 50 50)" />
+  <ellipse cx="50" cy="14" rx="7" ry="10" fill="white" transform="rotate(288 50 50)" />
+  <!-- White rose petals (5 inner offset) -->
+  <ellipse cx="50" cy="20" rx="5" ry="8" fill="#f0f0f0" transform="rotate(36 50 50)" />
+  <ellipse cx="50" cy="20" rx="5" ry="8" fill="#f0f0f0" transform="rotate(108 50 50)" />
+  <ellipse cx="50" cy="20" rx="5" ry="8" fill="#f0f0f0" transform="rotate(180 50 50)" />
+  <ellipse cx="50" cy="20" rx="5" ry="8" fill="#f0f0f0" transform="rotate(252 50 50)" />
+  <ellipse cx="50" cy="20" rx="5" ry="8" fill="#f0f0f0" transform="rotate(324 50 50)" />
+  <!-- Red heart -->
+  <path d="M50 62 C50 62 30 50 30 38 C30 29 38 25 44 29 C46 30 48 32 50 35 C52 32 54 30 56 29 C62 25 70 29 70 38 C70 50 50 62 50 62Z" fill="#8B1A1A" />
+  <!-- Black cross -->
+  <rect x="46" y="26" width="8" height="28" fill="#1a1a1a" rx="1" />
+  <rect x="37" y="35" width="26" height="8" fill="#1a1a1a" rx="1" />
+  <!-- Rose center -->
+  <circle cx="50" cy="50" r="5" fill="#C8943A" />
+  <circle cx="50" cy="50" r="3" fill="#fff5e0" />
+</svg>

@@ -43,3 +43,9 @@ next-env.d.ts
 # Markdown project files
 *.md
 !README.md
+
+# AI agent instruction files
+AGENTS.md
+CLAUDE.md
+.cursorrules
+.aider*
