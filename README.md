@@ -1,36 +1,51 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ethiopian Liturgical Calendar Engine
 
-## Getting Started
+A validation tool and data engine for computing the Ethiopian church year. Built as a standalone research project before integrating into a Christian worship mobile app for Ethiopian Lutheran (Mekane Yesus) congregations.
 
-First, run the development server:
+## What this is
+
+The Ethiopian liturgical calendar is not a simple date formatting problem. Computing the church year correctly requires implementing the Bahire Hasab system — the traditional Ethiopian Orthodox computus derived from the Alexandrian tradition — which determines Easter (Fasika) and all movable feasts through a chain of lunar arithmetic anchored at the Fast of Nineveh.
+
+This project ports that algorithm into JavaScript, validates it against three independent open source implementations, and provides a visual tool for inspecting the output across any Ethiopian year.
+
+## What it does
+
+The engine computes the following for any Ethiopian year:
+
+- All 11 movable feasts via tewsak offsets from the Nineveh anchor
+- All fixed feasts keyed by Ethiopian calendar date
+- All fasting periods with start and end dates
+- The four-year Evangelist cycle (John, Matthew, Mark, Luke)
+- Gregorian to Ethiopian and Ethiopian to Gregorian date conversion
+- A precomputed dataset for Ethiopian years 2010 through 2030
+
+The visualizer lets you select any year, inspect individual days, trace the full Bahire Hasab computation step by step, compare feast dates across all four Evangelist years, and export the dataset as JSON.
+
+## Algorithm source
+
+The Bahire Hasab implementation is ported from the Kenat open source project (MIT license), cross-referenced against AbushakirJs (TypeScript) and Ethiocal (Go). All three implement the same algorithm independently, which provided confidence in the port.
+
+The core idea: every movable feast is a fixed number of days from the Fast of Nineveh. Nineveh is computed from lunar constants. Easter is Nineveh plus 69 days. Everything else follows.
+
+## Status
+
+The engine and visualizer are complete. The Mekane Yesus lectionary layer — readings, sermon themes, and commemorations by Evangelist year — is pending. We are in the process of obtaining that dataset from the Ethiopian Evangelical Church Mekane Yesus (EECMY). Integration into the mobile app begins once that data is in hand.
+
+## Running locally
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Contributing
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+If you have access to EECMY lectionary tables, Mekane Yesus Sunday readings, or EOTC sanctoral calendar data in any form, please reach out. That is the one piece we cannot compute and must source from the church directly.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+[EMAIL_ADDRESS]
 
-## Learn More
+## Credits
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Bahire Hasab algorithm adapted from Kenat by Henok Mikre (MIT license).
+Ethiopian calendar conversion from the same project.
+Original computus tradition of the Ethiopian Orthodox Tewahedo Church.
