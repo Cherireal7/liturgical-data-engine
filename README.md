@@ -48,4 +48,8 @@ If you have access to EECMY lectionary tables, Mekane Yesus Sunday readings, or 
 
 Bahire Hasab algorithm adapted from Kenat by Henok Mikre (MIT license).
 Ethiopian calendar conversion from the same project.
+<<<<<<< HEAD
 Original computus tradition of the Ethiopian Orthodox Tewahedo Church.
+=======
+Original computus tradition of the Ethiopian Orthodox Tewahedo Church.
+>>>>>>> af34f00f5ab1f32caf608a7fedcfc6c3b905141e
