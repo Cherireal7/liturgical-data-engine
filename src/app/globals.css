@@ -17,11 +17,29 @@ body {
   background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans);
-  
-  /* Next.js official website style grid pattern (subtle dotted/dashed look) */
-  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
-                    linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px);
-  background-size: 50px 50px;
-  background-position: center top;
 }
 
+.scroll-panel {
+  scrollbar-color: rgba(255, 255, 255, 0.36) rgba(255, 255, 255, 0.06);
+  scrollbar-width: thin;
+}
+
+.scroll-panel::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.scroll-panel::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+}
+
+.scroll-panel::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.28);
+  border: 2px solid #000;
+  border-radius: 999px;
+}
+
+.scroll-panel::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.48);
+}

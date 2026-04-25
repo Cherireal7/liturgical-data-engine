@@ -377,6 +377,7 @@ function SectionRenderer({ section }: { section: DocSection }) {
 export default function DocumentationPage() {
   const [doc, setDoc] = useState<DocData | null>(null);
   const [activeSection, setActiveSection] = useState("overview");
+  const [readingProgress, setReadingProgress] = useState(0);
 
   useEffect(() => {
     fetch("/data/documentation.json")
@@ -386,6 +387,9 @@ export default function DocumentationPage() {
 
   useEffect(() => {
     const handleScroll = () => {
+      const maxScroll = document.documentElement.scrollHeight - window.innerHeight;
+      setReadingProgress(maxScroll > 0 ? Math.min(100, (window.scrollY / maxScroll) * 100) : 0);
+
       const sections = doc?.sections ?? [];
       for (let i = sections.length - 1; i >= 0; i--) {
         const el = document.getElementById(sections[i].id);
@@ -407,10 +411,16 @@ export default function DocumentationPage() {
     );
   }
 
+  const activeSectionIndex = Math.max(
+    0,
+    doc.sections.findIndex((sec) => sec.id === activeSection)
+  );
+
   return (
     <div className="min-h-screen flex flex-col font-sans text-white bg-black">
       {/* Top Nav — minimal: back + title only. Sidebar handles in-page nav. */}
       <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-[12px] flex items-center px-6 h-16 gap-6">
+        <div className="absolute bottom-0 left-0 h-px bg-white transition-[width] duration-150" style={{ width: `${readingProgress}%` }} />
         <Link href="/" className="inline-flex items-center gap-2 text-[#888] hover:text-white transition-colors text-sm shrink-0">
           <ArrowLeft className="w-4 h-4" />
           Home
@@ -422,22 +432,48 @@ export default function DocumentationPage() {
       <div className="flex flex-1 w-full max-w-7xl mx-auto px-6 py-12 gap-12">
         {/* Sidebar (desktop) */}
         <aside className="hidden lg:flex flex-col w-52 xl:w-60 shrink-0">
-          <div className="sticky top-24 space-y-1">
-            <div className="text-[#888] text-xs uppercase tracking-wider font-medium mb-4">On this page</div>
-            {doc.sections.map((sec) => (
-              <a
-                key={sec.id}
-                href={`#${sec.id}`}
-                onClick={() => setActiveSection(sec.id)}
-                className={`block text-sm py-1.5 px-3 rounded-md transition-colors ${
-                  activeSection === sec.id
-                    ? "text-white bg-white/5 border border-white/10"
-                    : "text-[#888] hover:text-white"
-                }`}
-              >
-                {sec.heading}
-              </a>
-            ))}
+          <div className="sticky top-24 rounded-xl border border-white/10 bg-black/80 p-4 shadow-2xl shadow-black/40">
+            <div className="mb-4 flex items-center justify-between gap-3">
+              <div className="text-[#888] text-xs uppercase tracking-wider font-medium">On this page</div>
+              <div className="text-[11px] text-[#555] tabular-nums">
+                {String(activeSectionIndex + 1).padStart(2, "0")} / {String(doc.sections.length).padStart(2, "0")}
+              </div>
+            </div>
+            <nav className="relative space-y-1">
+              <div className="absolute left-[13px] top-3 bottom-3 w-px bg-white/10" />
+              <div
+                className="absolute left-[13px] top-3 w-px bg-white transition-all duration-300"
+                style={{
+                  height: `${doc.sections.length <= 1 ? 0 : (activeSectionIndex / (doc.sections.length - 1)) * 100}%`,
+                }}
+              />
+              {doc.sections.map((sec, idx) => {
+                const isActive = activeSection === sec.id;
+                const isPast = idx < activeSectionIndex;
+
+                return (
+                  <a
+                    key={sec.id}
+                    href={`#${sec.id}`}
+                    onClick={() => setActiveSection(sec.id)}
+                    className={`
+                      group relative grid grid-cols-[28px_1fr] items-center gap-2 rounded-lg py-2 pr-2 text-sm transition-colors
+                      ${isActive ? "bg-white/[0.07] text-white" : "text-[#888] hover:bg-white/5 hover:text-white"}
+                    `}
+                  >
+                    <span
+                      className={`
+                        z-10 flex h-7 w-7 items-center justify-center rounded-full border text-[10px] font-bold tabular-nums transition-colors
+                        ${isActive ? "border-white bg-white text-black" : isPast ? "border-white bg-black text-white" : "border-white/20 bg-black text-[#666] group-hover:border-white/50 group-hover:text-white"}
+                      `}
+                    >
+                      {idx + 1}
+                    </span>
+                    <span className="truncate">{sec.heading}</span>
+                  </a>
+                );
+              })}
+            </nav>
           </div>
         </aside>
 
