@@ -14,8 +14,19 @@ const notoEthiopic = Noto_Sans_Ethiopic({
 });
 
 export const metadata: Metadata = {
-  title: "Ethiopian Liturgical Calendar",
-  description: "Bahire Hasab Validation Tool and Ethiopian-Gregorian Date Converter",
+  title: "Ethiopian Lutheran Liturgical Engine",
+  description: "An open-source, community-collaborated liturgical data engine for Ethiopian Lutheran churches (LCE, EECMY, EELC). Computes the Bahire Hasab, tracks the 3-year lectionary, and provides scriptural readings.",
+  keywords: ["Ethiopian Lutheran", "LCE", "EECMY", "EELC", "Ethiopian Calendar", "Bahire Hasab", "Liturgical Engine", "Lectionary", "Open Source", "Ethiopia"],
+  authors: [{ name: "Open Source Community" }],
+  openGraph: {
+    title: "Ethiopian Lutheran Liturgical Engine",
+    description: "An open-source, community-collaborated liturgical data engine for Ethiopian Lutheran churches (LCE, EECMY, EELC).",
+    type: "website",
+  },
+  icons: {
+    icon: "/luther-rose.svg",
+    apple: "/luther-rose.svg",
+  }
 };
 
 export default function RootLayout({
