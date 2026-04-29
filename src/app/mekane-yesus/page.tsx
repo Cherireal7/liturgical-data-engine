@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react";
 import { OBSERVANCES, SEASONS, getSeriesForYear, SERIES_NAMES, SERIES_NAMES_AM } from "@/data/eecmy";
 import { gcToEt, calculateBahireHasab, ethiopianMonths } from "@/engine/bahireHasab";
 import MekaneGeometry from "@/components/MekaneGeometry";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const SEASON_COLORS: Record<string, { hex: string; bg: string; text: string; border: string; glow: string }> = {
   gold:   { hex: "#C8943A", bg: "bg-amber-950/60",    text: "text-amber-300",    border: "border-amber-700/40",   glow: "shadow-amber-900/40"   },
@@ -80,8 +81,8 @@ export default function MekaneYesusPage() {
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
         <div className="max-w-7xl mx-auto px-4 h-14 flex items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
-            <Link href="/" className="text-xs text-[#666] hover:text-white border border-white/10 px-3 py-1.5 rounded-md transition-colors">← Main</Link>
+          <div className="flex items-center gap-3">
+            <Link href="/" className="text-xs text-[#666] hover:text-white border border-white/10 px-3 py-1.5 rounded-md transition-colors">Home</Link>
             <span className="text-sm font-bold text-white flex items-center gap-2">
               <span className="text-amber-400 font-ethiopic">የመካነ ኢየሱስ</span>
               <span className="hidden sm:inline text-[#666] font-normal text-xs">EECMY Lectionary</span>
@@ -92,21 +93,26 @@ export default function MekaneYesusPage() {
               <a key={s.id} href={`#${s.id}`} className="text-xs text-[#666] hover:text-white px-3 py-1 rounded-md hover:bg-white/5 transition-colors">{s.label}</a>
             ))}
           </nav>
-          <div className="flex items-center gap-3">
+          <div className="flex items-center gap-2">
             <div className="hidden sm:flex items-center gap-2 rounded-lg border border-amber-700/30 bg-amber-950/30 px-3 py-1.5 text-[10px]">
               <span className="text-amber-300 font-ethiopic">{SERIES_NAMES_AM[si]}</span>
               <span className="text-[#666]">Year of {SERIES_NAMES[si]}</span>
             </div>
+            <ThemeToggle />
             <button onClick={() => setMobileOpen(!mobileOpen)} className="p-1.5 border border-white/10 rounded-md md:hidden">
               {mobileOpen ? <X size={14} /> : <Menu size={14} />}
             </button>
           </div>
         </div>
+        {/* Mobile overlay menu — fixed, does not push content */}
         {mobileOpen && (
-          <div className="md:hidden border-t border-white/10 bg-black/95 p-4 flex flex-col gap-2">
-            {SECTIONS.map(s => (
-              <a key={s.id} href={`#${s.id}`} onClick={() => setMobileOpen(false)} className="text-sm text-[#888] px-4 py-2 rounded-md hover:bg-white/5">{s.label}</a>
-            ))}
+          <div className="fixed inset-0 top-14 z-40 md:hidden" onClick={() => setMobileOpen(false)}>
+            <div className="absolute top-0 right-0 w-64 bg-black/98 border-l border-white/10 h-full p-6 flex flex-col gap-3" onClick={e => e.stopPropagation()}>
+              <Link href="/" onClick={() => setMobileOpen(false)} className="text-sm text-[#888] px-4 py-2 rounded-md hover:bg-white/5">Home</Link>
+              {SECTIONS.map(s => (
+                <a key={s.id} href={`#${s.id}`} onClick={() => setMobileOpen(false)} className="text-sm text-[#888] px-4 py-2 rounded-md hover:bg-white/5">{s.label}</a>
+              ))}
+            </div>
           </div>
         )}
       </header>
@@ -122,9 +128,9 @@ export default function MekaneYesusPage() {
             <p className="text-[#888] text-lg max-w-md leading-relaxed">
               A four-year rotation of Evangelists anchored to Fasika, harmonizing the Ethiopian calendar with Lutheran liturgical heritage.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3">
               {SECTIONS.map(s => (
-                <a key={s.id} href={`#${s.id}`} className="rounded-xl border border-white/10 bg-white/[0.03] px-6 py-3 text-sm font-semibold text-[#aaa] hover:text-white hover:border-white/20 hover:bg-white/[0.06] transition-all">
+                <a key={s.id} href={`#${s.id}`} className="rounded-xl border border-white/10 bg-white/[0.03] px-5 py-2.5 text-sm font-semibold text-[#aaa] hover:text-white hover:border-white/20 hover:bg-white/[0.06] transition-all">
                   {s.label} →
                 </a>
               ))}
@@ -132,35 +138,42 @@ export default function MekaneYesusPage() {
           </div>
 
           {/* ORBIT */}
-          <div className="relative w-[380px] h-[380px] sm:w-[480px] sm:h-[480px] flex-shrink-0 flex items-center justify-center">
+          <div className="relative w-[340px] h-[340px] sm:w-[460px] sm:h-[460px] flex-shrink-0 flex items-center justify-center">
             <div className="absolute inset-0 rounded-full border border-white/5" />
             <div className="absolute inset-[12%] rounded-full border border-white/[0.07]" />
-            <div className="absolute inset-[26%] rounded-full border border-amber-700/10" />
+            <div className="absolute inset-[28%] rounded-full border border-amber-700/10" />
 
+            {/* Dots rotate, labels counter-rotate to stay upright */}
             <motion.div className="absolute inset-0" animate={{ rotate: 360 }} transition={{ duration: 160, repeat: Infinity, ease: "linear" }}>
               {SEASONS.map((s, i) => {
                 const angle = (i / SEASONS.length) * 360;
                 const c = sc(s.color);
+                const labelFlip = angle > 90 && angle < 270 ? 180 : 0;
                 return (
                   <div key={s.id} className="absolute left-1/2 top-1/2"
-                    style={{ transform: `rotate(${angle}deg) translateY(-225px) rotate(-${angle}deg) translate(-50%,-50%)` }}>
-                    <motion.div className="w-3 h-3 rounded-full mx-auto mb-1" style={{ backgroundColor: c.hex, boxShadow: `0 0 12px ${c.hex}66` }}
-                      animate={{ scale: [1, 1.3, 1] }} transition={{ duration: 3, delay: i * 0.25, repeat: Infinity }} />
-                    <div className="text-[9px] font-bold text-center whitespace-nowrap uppercase tracking-wider" style={{ color: c.hex, opacity: 0.85 }}>
-                      {s.nameEn.replace(" Season","").replace(" & Civil Feasts","").replace(" Week","")}
+                    style={{ transform: `rotate(${angle}deg) translateY(-195px)` }}>
+                    <motion.div className="w-3 h-3 rounded-full mx-auto"
+                      style={{ backgroundColor: c.hex, boxShadow: `0 0 10px ${c.hex}88` }}
+                      animate={{ scale: [1, 1.4, 1] }}
+                      transition={{ duration: 3, delay: i * 0.25, repeat: Infinity }}
+                    />
+                    <div style={{ transform: `rotate(${-angle + labelFlip}deg)` }} className="mt-2 text-center">
+                      <div className="text-[9px] font-bold whitespace-nowrap uppercase tracking-wide" style={{ color: c.hex }}>
+                        {s.nameEn.replace(" Season","").replace(" & Civil Feasts","").replace(" Week","")}
+                      </div>
+                      <div className="text-[8px] font-ethiopic whitespace-nowrap mt-0.5" style={{ color: c.hex, opacity: 0.7 }}>{s.nameAm}</div>
                     </div>
-                    <div className="text-[8px] text-center font-ethiopic mt-0.5 whitespace-nowrap" style={{ color: c.hex, opacity: 0.6 }}>{s.nameAm}</div>
                   </div>
                 );
               })}
             </motion.div>
 
-            <motion.div className="absolute inset-[26%] rounded-full border border-amber-700/20"
+            <motion.div className="absolute inset-[28%] rounded-full border border-amber-700/20"
               animate={{ rotate: -360 }} transition={{ duration: 80, repeat: Infinity, ease: "linear" }}>
               <div className="absolute -top-1 left-1/2 -translate-x-1/2 w-2 h-2 rounded-full bg-amber-400" style={{ boxShadow: "0 0 8px #C8943A" }} />
             </motion.div>
 
-            <div className="text-center z-10 px-6">
+            <div className="text-center z-10 px-4">
               <div className="text-5xl font-ethiopic font-bold text-white mb-2">{SERIES_NAMES_AM[si]}</div>
               <div className="text-xs text-[#666] uppercase tracking-[0.25em]">Year of {SERIES_NAMES[si]}</div>
               <div className="flex justify-center gap-1.5 mt-4">
@@ -339,18 +352,17 @@ export default function MekaneYesusPage() {
         </section>
       </main>
 
-      <footer className="relative z-10 border-t border-white/10 py-12 bg-black">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-6 text-[#555] text-xs">
-          <div className="flex flex-col items-center md:items-start gap-2">
-            <div className="flex items-center gap-2 text-[#888]">
-              <span className="text-amber-400 font-ethiopic">የመካነ ኢየሱስ</span>
-              <span className="font-bold">EECMY Lectionary Engine</span>
-            </div>
-            <span>© 2026 Liturgical Data Engine. Built for the Ethiopian Lutheran Communion.</span>
+      <footer className="relative z-10 w-full border-t border-white/10 py-10 px-4 sm:px-6 bg-black">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-5 text-[#888] text-sm">
+          <div className="flex flex-col items-center md:items-start gap-1 text-center md:text-left">
+            <span>© 2026 Ethiopian Lutheran Liturgical System (LCE, EECMY, EELC)</span>
+            <span>Open source, built in collaboration with Cherinet and Lukas.</span>
           </div>
-          <div className="flex gap-8">
+          <div className="flex gap-6">
             <Link href="/" className="hover:text-white transition-colors">Home</Link>
             <Link href="/documentation" className="hover:text-white transition-colors">Documentation</Link>
+            <a href="/#trace" className="hover:text-white transition-colors">Bahire Hasab</a>
+            <a href="/#converter" className="hover:text-white transition-colors">Converter</a>
           </div>
         </div>
       </footer>

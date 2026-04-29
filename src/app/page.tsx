@@ -11,6 +11,7 @@ import Converter from "@/components/Converter";
 import LandingGeometry from "@/components/LandingGeometry";
 import LiturgicalDashboard from "@/components/LiturgicalDashboard";
 import FAQ from "@/components/FAQ";
+import ThemeToggle from "@/components/ThemeToggle";
 
 export default function Home() {
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
@@ -54,15 +55,18 @@ export default function Home() {
               </a>
             ))}
           </nav>
-          <button
-            type="button"
-            onClick={() => setIsMobileNavOpen((open) => !open)}
-            className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-[#aaa] transition-colors hover:border-white/30 hover:text-white md:hidden"
-            aria-label="Toggle navigation menu"
-            aria-expanded={isMobileNavOpen}
-          >
-            {isMobileNavOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
-          </button>
+          <div className="flex items-center gap-2">
+            <ThemeToggle />
+            <button
+              type="button"
+              onClick={() => setIsMobileNavOpen((open) => !open)}
+              className="inline-flex h-9 w-9 items-center justify-center rounded-md border border-white/10 text-[#aaa] transition-colors hover:border-white/30 hover:text-white md:hidden"
+              aria-label="Toggle navigation menu"
+              aria-expanded={isMobileNavOpen}
+            >
+              {isMobileNavOpen ? <X className="h-4 w-4" /> : <Menu className="h-4 w-4" />}
+            </button>
+          </div>
         </div>
         <nav
           className={`
