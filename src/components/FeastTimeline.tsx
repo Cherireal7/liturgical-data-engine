@@ -4,11 +4,28 @@ import { useState, useEffect, useMemo, useRef } from "react";
 import * as d3 from "d3";
 import { calculateBahireHasab, ethiopianMonths } from "@/engine/bahireHasab";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTheme } from "./ThemeProvider";
 
 export default function FeastTimeline() {
   const [year, setYear] = useState(2018);
+  const { theme } = useTheme();
   const data = useMemo(() => calculateBahireHasab(year), [year]);
   const svgRef = useRef<SVGSVGElement>(null);
+
+  const isLight = theme === "light";
+  const C = {
+    bg:      isLight ? "#faf8f2" : "#000",
+    axis:    isLight ? "rgba(0,0,0,0.15)" : "rgba(255,255,255,0.1)",
+    label:   isLight ? "#777" : "#9a9a9a",
+    dot:     isLight ? "#1a1a1a" : "#fff",
+    dotStroke: isLight ? "#faf8f2" : "#000",
+    line:    isLight ? "rgba(0,0,0,0.15)" : "rgba(255,255,255,0.14)",
+    band:    isLight ? "rgba(0,0,0,0.06)" : "rgba(255,255,255,0.05)",
+    ttBg:    isLight ? "#f0ede5" : "#111",
+    ttText:  isLight ? "#1a1a1a" : "#ededed",
+    ttBorder: isLight ? "rgba(0,0,0,0.12)" : "rgba(255,255,255,0.1)",
+    path:    isLight ? "rgba(0,0,0,0.2)" : "rgba(255,255,255,0.1)",
+  };
 
   useEffect(() => {
     if (!svgRef.current) return;
@@ -45,8 +62,9 @@ export default function FeastTimeline() {
       .attr("transform", `translate(0,${height / 2})`)
       .attr("class", "text-[#888] font-ethiopic text-sm")
       .call(xAxis)
-      .call(g => g.select(".domain").attr("stroke", "rgba(255,255,255,0.1)"))
-      .call(g => g.selectAll(".tick line").attr("stroke", "rgba(255,255,255,0.1)"));
+      .call(g => g.select(".domain").attr("stroke", C.axis))
+      .call(g => g.selectAll(".tick line").attr("stroke", C.axis))
+      .call(g => g.selectAll(".tick text").attr("fill", C.label));
 
     const feastPoints = feastsList.map((feast, index) => {
       const dayOfYear = getDayOfYear(feast.month, feast.day);
@@ -96,7 +114,10 @@ export default function FeastTimeline() {
       });
 
     const tooltip = d3.select("body").append("div")
-      .attr("class", "absolute hidden bg-[#111] text-[#ededed] p-3 rounded-md border border-white/10 font-ethiopic shadow-xl pointer-events-none z-50 text-sm");
+      .attr("class", "absolute hidden p-3 rounded-md font-ethiopic shadow-xl pointer-events-none z-50 text-sm")
+      .style("background", C.ttBg)
+      .style("color", C.ttText)
+      .style("border", `1px solid ${C.ttBorder}`);
 
     const abiyStart = getDayOfYear(data.feasts["ABIY_TSOME"].month, data.feasts["ABIY_TSOME"].day);
     const siklet = getDayOfYear(data.feasts["SIKLET"].month, data.feasts["SIKLET"].day);
@@ -107,7 +128,7 @@ export default function FeastTimeline() {
       .attr("y", height / 2 - 10)
       .attr("width", xScale(siklet) - xScale(abiyStart))
       .attr("height", 20)
-      .attr("fill", "rgba(255,255,255,0.05)")
+      .attr("fill", C.band)
       .attr("rx", 4);
 
     const points = svg.selectAll(".point")
@@ -119,15 +140,15 @@ export default function FeastTimeline() {
 
     points.append("circle")
       .attr("r", 8)
-      .attr("fill", "#fff")
-      .attr("stroke", "#000")
+      .attr("fill", C.dot)
+      .attr("stroke", C.dotStroke)
       .attr("stroke-width", 2)
       .on("mouseover", (event, d) => {
-        d3.select(event.currentTarget).attr("r", 12).attr("fill", "#fff");
+        d3.select(event.currentTarget).attr("r", 12).attr("fill", C.dot);
         tooltip.classed("hidden", false)
           .html(`
-            <div class="font-bold text-white mb-1">${d.name}</div>
-            <div class="text-[#888]">${ethiopianMonths[d.month - 1]} ${d.day}</div>
+            <div style="font-weight:bold;color:${C.ttText};margin-bottom:4px">${d.name}</div>
+            <div style="color:${C.label}">${ethiopianMonths[d.month - 1]} ${d.day}</div>
           `)
           .style("left", (event.pageX + 15) + "px")
           .style("top", (event.pageY - 28) + "px");
@@ -135,23 +156,22 @@ export default function FeastTimeline() {
       .on("mouseout", (event) => {
         d3.select(event.currentTarget)
           .attr("r", 8)
-          .attr("fill", "#fff");
+          .attr("fill", C.dot);
         tooltip.classed("hidden", true);
       });
 
     points.append("line")
-      .attr("x1", 0)
-      .attr("y1", 0)
-      .attr("x2", 0)
+      .attr("x1", 0).attr("y1", 0).attr("x2", 0)
       .attr("y2", d => (labelPositions.get(d.id)?.y ?? 36) - Math.sign(labelPositions.get(d.id)?.y ?? 36) * 14)
-      .attr("stroke", "rgba(255,255,255,0.14)")
+      .attr("stroke", C.line)
       .attr("stroke-width", 1);
 
     points.append("text")
       .attr("y", d => labelPositions.get(d.id)?.y ?? 36)
       .attr("text-anchor", "middle")
       .attr("dominant-baseline", "middle")
-      .attr("class", "text-[11px] font-ethiopic fill-[#9a9a9a]")
+      .attr("class", "text-[11px] font-ethiopic")
+      .attr("fill", C.label)
       .text(d => d.name);
 
     const feastLine = d3.line<FeastPoint>()
@@ -162,7 +182,7 @@ export default function FeastTimeline() {
     svg.append("path")
       .datum(feastPoints)
       .attr("fill", "none")
-      .attr("stroke", "rgba(255,255,255,0.2)")
+      .attr("stroke", C.path)
       .attr("stroke-width", 1)
       .attr("stroke-dasharray", "4,4")
       .attr("d", feastLine);
@@ -170,7 +190,7 @@ export default function FeastTimeline() {
     return () => {
       tooltip.remove();
     };
-  }, [data]);
+  }, [data, theme]);
 
   return (
     <div className="flex flex-col gap-8 w-full">
@@ -194,8 +214,8 @@ export default function FeastTimeline() {
       </div>
 
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 text-sm font-ethiopic">
-        {data && Object.entries(data.feasts).map(([key, f]) => (
-          <div key={key} className="flex justify-between p-4 border border-white/10 rounded-lg hover:bg-[#111] transition-colors">
+      {data && Object.entries(data.feasts).map(([key, f]) => (
+          <div key={key} className="flex justify-between p-4 border border-white/10 rounded-lg hover:bg-white/[0.04] transition-colors">
             <span className="text-[#888] font-medium">{f.name}</span>
             <span className="text-white font-bold">{ethiopianMonths[f.month - 1]} {f.day}</span>
           </div>

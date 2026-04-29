@@ -1,8 +1,31 @@
 @import "tailwindcss";
 
+/* ── Design tokens ── */
 :root {
-  --background: #000000;
-  --foreground: #ededed;
+  --bg:           #000000;
+  --bg-card:      #0a0a0a;
+  --bg-subtle:    #050505;
+  --bg-muted:     #111111;
+  --border:       rgba(255,255,255,0.1);
+  --text-primary: #ffffff;
+  --text-muted:   #888888;
+  --text-dim:     #555555;
+  --background:   #000000;
+  --foreground:   #ededed;
+}
+
+/* ── Light Mode tokens ── */
+html.light-mode {
+  --bg:           #faf8f2;
+  --bg-card:      #f5f2ea;
+  --bg-subtle:    #ede9df;
+  --bg-muted:     #e8e4d8;
+  --border:       rgba(0,0,0,0.12);
+  --text-primary: #1a1a1a;
+  --text-muted:   #5a5a5a;
+  --text-dim:     #888888;
+  --background:   #faf8f2;
+  --foreground:   #1a1a1a;
 }
 
 @theme inline {
@@ -18,37 +41,114 @@ body {
   font-family: var(--font-sans);
 }
 
-/* ── Light Mode ── */
-html.light-mode {
-  --background: #f8f6f0;
-  --foreground: #1a1a1a;
-}
+/* ══════════════════════════════════════════
+   LIGHT MODE — comprehensive overrides
+   ══════════════════════════════════════════ */
 
-html.light-mode body {
-  background-color: var(--background);
-  color: var(--foreground);
-}
+/* Page & section backgrounds */
+html.light-mode body,
+html.light-mode .bg-black { background-color: var(--bg) !important; }
 
-html.light-mode .bg-black { background-color: #f8f6f0 !important; }
-html.light-mode .bg-black\/80 { background-color: rgba(248,246,240,0.9) !important; }
-html.light-mode .bg-black\/95 { background-color: rgba(248,246,240,0.97) !important; }
+html.light-mode .bg-\[\#050505\],
+html.light-mode .bg-\[\#060606\],
+html.light-mode .bg-\[\#030303\],
+html.light-mode .bg-\[\#0a0a0a\] { background-color: var(--bg-subtle) !important; }
+
+html.light-mode .bg-\[\#111\],
+html.light-mode .bg-\[\#111111\],
+html.light-mode .bg-\[\#101010\],
+html.light-mode .bg-\[\#121212\],
+html.light-mode .bg-\[\#0d0d0d\] { background-color: var(--bg-muted) !important; }
+
+/* White-opacity utility backgrounds → dark-opacity in light mode */
+html.light-mode .bg-white\/\[0\.01\] { background-color: rgba(0,0,0,0.02) !important; }
 html.light-mode .bg-white\/\[0\.02\] { background-color: rgba(0,0,0,0.03) !important; }
 html.light-mode .bg-white\/\[0\.03\] { background-color: rgba(0,0,0,0.04) !important; }
 html.light-mode .bg-white\/\[0\.04\] { background-color: rgba(0,0,0,0.05) !important; }
 html.light-mode .bg-white\/\[0\.05\] { background-color: rgba(0,0,0,0.06) !important; }
-html.light-mode .bg-white\/\[0\.06\] { background-color: rgba(0,0,0,0.07) !important; }
+html.light-mode .bg-white\/\[0\.06\] { background-color: rgba(0,0,0,0.08) !important; }
+html.light-mode .bg-white\/\[0\.075\] { background-color: rgba(0,0,0,0.09) !important; }
+html.light-mode .bg-white\/5  { background-color: rgba(0,0,0,0.05) !important; }
 html.light-mode .bg-white\/10 { background-color: rgba(0,0,0,0.08) !important; }
-html.light-mode .text-white { color: #1a1a1a !important; }
-html.light-mode .text-\[\#888\] { color: #555 !important; }
-html.light-mode .text-\[\#666\] { color: #666 !important; }
-html.light-mode .text-\[\#aaa\] { color: #444 !important; }
-html.light-mode .text-\[\#555\] { color: #777 !important; }
-html.light-mode .border-white\/10 { border-color: rgba(0,0,0,0.12) !important; }
-html.light-mode .border-white\/\[0\.06\] { border-color: rgba(0,0,0,0.08) !important; }
-html.light-mode .border-white\/5 { border-color: rgba(0,0,0,0.06) !important; }
-html.light-mode .border-white\/20 { border-color: rgba(0,0,0,0.18) !important; }
+html.light-mode .bg-white\/25 { background-color: rgba(0,0,0,0.15) !important; }
 
-/* scrollbar */
+/* Header/backdrop */
+html.light-mode .bg-black\/80 { background-color: rgba(250,248,242,0.92) !important; }
+html.light-mode .bg-black\/95,
+html.light-mode .bg-black\/98 { background-color: rgba(250,248,242,0.98) !important; }
+
+/* Sidebar / inspector card */
+html.light-mode .bg-\[\#0a0a0a\] { background-color: var(--bg-card) !important; }
+
+/* Gradient fade overlays — flip to light */
+html.light-mode .from-black { --tw-gradient-from: #faf8f2 !important; }
+html.light-mode .to-black   { --tw-gradient-to:   #faf8f2 !important; }
+
+/* Text */
+html.light-mode .text-white   { color: var(--text-primary) !important; }
+html.light-mode .text-\[\#888\],
+html.light-mode .text-\[\#888888\],
+html.light-mode .text-\[\#777\],
+html.light-mode .text-\[\#aaa\] { color: var(--text-muted) !important; }
+html.light-mode .text-\[\#666\],
+html.light-mode .text-\[\#555\],
+html.light-mode .text-\[\#444\] { color: var(--text-dim) !important; }
+html.light-mode .text-\[\#9a9a9a\] { color: #777 !important; }
+
+/* text-white/40, text-white/60 etc */
+html.light-mode .text-white\/40 { color: rgba(0,0,0,0.35) !important; }
+html.light-mode .text-white\/60 { color: rgba(0,0,0,0.5)  !important; }
+
+/* Borders */
+html.light-mode .border-white\/5  { border-color: rgba(0,0,0,0.06) !important; }
+html.light-mode .border-white\/10 { border-color: rgba(0,0,0,0.12) !important; }
+html.light-mode .border-white\/15 { border-color: rgba(0,0,0,0.14) !important; }
+html.light-mode .border-white\/20 { border-color: rgba(0,0,0,0.18) !important; }
+html.light-mode .border-white\/30 { border-color: rgba(0,0,0,0.22) !important; }
+html.light-mode .divide-white\/5 > * + * { border-color: rgba(0,0,0,0.06) !important; }
+
+/* Ring */
+html.light-mode .ring-white\/35 { --tw-ring-color: rgba(0,0,0,0.25) !important; }
+html.light-mode .ring-1         { box-shadow: 0 0 0 1px rgba(0,0,0,0.25) !important; }
+
+/* Calendar cells — specific overrides for YearView */
+html.light-mode .bg-\[\#101010\] { background-color: #ebe7db !important; } /* fasting */
+html.light-mode .bg-\[\#060606\] { background-color: #e0dbd0 !important; } /* sunday */
+html.light-mode .bg-\[\#030303\] { background-color: #f0ede5 !important; } /* pagume */
+html.light-mode .bg-\[\#050505\] { background-color: var(--bg-subtle) !important; } /* default cell */
+html.light-mode .bg-\[\#171717\] { background-color: #d8d3c8 !important; } /* selected */
+
+/* FourYears cards header stripe */
+html.light-mode .bg-\[\#050505\].rounded-xl,
+html.light-mode .bg-\[\#050505\].rounded-2xl { background-color: var(--bg-card) !important; }
+
+/* AlgorithmTrace cards */
+html.light-mode .bg-\[\#050505\].p-3,
+html.light-mode .hover\:bg-\[\#0a0a0a\]:hover { background-color: var(--bg-muted) !important; }
+
+/* Code/mono blocks */
+html.light-mode code,
+html.light-mode .font-mono { color: #2d4a7a !important; }
+
+/* SVG geometry — make strokes visible on light bg */
+html.light-mode svg .text-white { color: #1a1a1a !important; }
+
+/* FeastTimeline SVG lines */
+html.light-mode svg line[stroke="white"],
+html.light-mode svg circle[stroke="white"] {
+  stroke: #1a1a1a !important;
+}
+
+/* Scrollbar on light */
+html.light-mode .scroll-panel {
+  scrollbar-color: rgba(0,0,0,0.2) rgba(0,0,0,0.06);
+}
+html.light-mode .scroll-panel::-webkit-scrollbar-track { background: rgba(0,0,0,0.04); }
+html.light-mode .scroll-panel::-webkit-scrollbar-thumb { background: rgba(0,0,0,0.18); border-color: #faf8f2; }
+
+/* ══════════════════════════════════════════
+   Scrollbar (dark default)
+   ══════════════════════════════════════════ */
 .scroll-panel {
   scrollbar-color: rgba(255,255,255,0.36) rgba(255,255,255,0.06);
   scrollbar-width: thin;
