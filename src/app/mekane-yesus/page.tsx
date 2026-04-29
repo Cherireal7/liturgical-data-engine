@@ -29,6 +29,23 @@ const COLOR_MAP: Record<string, { bg: string; text: string; border: string }> = 
 
 const SEASON_ORDER = ["newyear", "advent", "christmas", "epiphany", "pre_lent", "lent", "holy_week", "easter", "ascension", "pentecost", "trinity", "end_of_year", "fixed_feasts"];
 
+const COMPARISON_ROWS = [
+  ["Calendar system",         "Ethiopic 13-month", "Ethiopic 13-month", true ],
+  ["Easter computation",      "Bahire Hasab",      "Bahire Hasab",      true ],
+  ["Year start (civil)",      "Enkutatash",        "Enkutatash",        true ],
+  ["Year start (liturgical)", "Tsome Nebiyat",     "Advent",            false],
+  ["Lectionary cycle",        "4-year Evangelist", "4-year Evangelist", true ],
+  ["Readings per Sunday",     "Multiple (8+)",     "3 (OT/Ep/Gospel)",  false],
+  ["Nineveh fast",            "Yes",               "No",                false],
+  ["Tsome Hawaryat",          "Yes",               "No",                false],
+  ["Meskel (Sept 27)",        "Yes",               "Yes",               true ],
+  ["Gena (Jan 7)",            "Yes",               "Yes",               true ],
+  ["Timket (Jan 19)",         "Yes",               "Yes",               true ],
+  ["Reformation Day",         "Not observed",      "Oct 31",            false],
+  ["Annunciation",            "Megabit 29",        "Megabit 29",        true ],
+  ["Transfiguration",         "Nehasse 13",        "Nehasse 13",        true ],
+];
+
 export default function MekaneYesusPage() {
   const [tab, setTab] = useState("overview");
   const [search, setSearch] = useState("");
