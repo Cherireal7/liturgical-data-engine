@@ -50,7 +50,7 @@ export const SEASONS: SeasonMeta[] = [
   { id: "pre_lent",   nameEn: "Pre-Lent",                nameAm: "ቅድመ-ጾም",      color: "violet", order: 4 },
   { id: "lent",       nameEn: "Lent",                    nameAm: "ዐቢይ ጾም",      color: "violet", order: 5 },
   { id: "holy_week",  nameEn: "Holy Week",               nameAm: "ቅዱስ ሳምንት",   color: "red",    order: 6 },
-  { id: "easter",     nameEn: "Easter",                  nameAm: "ፋሲካ",          color: "white",  order: 7 },
+  { id: "easter",     nameEn: "Easter",                  nameAm: "ትንሣኤ",          color: "white",  order: 7 },
   { id: "ascension",  nameEn: "Ascension",               nameAm: "ዕርገት",         color: "white",  order: 8 },
   { id: "pentecost",  nameEn: "Pentecost",               nameAm: "ጰራቅሊጦስ",      color: "red",    order: 9 },
   { id: "trinity",    nameEn: "Trinity Season",          nameAm: "ሥላሴ",          color: "green",  order: 10 },

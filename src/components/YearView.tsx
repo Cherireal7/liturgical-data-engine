@@ -141,12 +141,12 @@ export default function YearView() {
           <div className="relative overflow-hidden rounded-lg border border-white/10 bg-black">
             <div className="scroll-panel max-h-56 overflow-auto">
             <table className="w-full text-left text-[11px] sm:text-xs text-[#888]">
-              <thead className="bg-[#111] text-[#888] border-b border-white/10">
+              <thead className="bg-[#111] text-[#888]">
                 <tr>
-                  <th className="sticky top-0 z-10 bg-[#111] px-3 py-2 font-medium shadow-[0_1px_0_rgba(255,255,255,0.1)]">ET Year</th>
-                  <th className="sticky top-0 z-10 bg-[#111] px-3 py-2 font-medium shadow-[0_1px_0_rgba(255,255,255,0.1)]">Evangelist</th>
-                  <th className="sticky top-0 z-10 bg-[#111] px-3 py-2 font-medium font-ethiopic shadow-[0_1px_0_rgba(255,255,255,0.1)]">Fasika (ET)</th>
-                  <th className="sticky top-0 z-10 bg-[#111] px-3 py-2 font-medium shadow-[0_1px_0_rgba(255,255,255,0.1)]">Fasika (GC)</th>
+                  <th className="sticky top-0 z-10 bg-[#111] px-3 py-2 font-medium border-b border-white/10">ET Year</th>
+                  <th className="sticky top-0 z-10 bg-[#111] px-3 py-2 font-medium border-b border-white/10">Evangelist</th>
+                  <th className="sticky top-0 z-10 bg-[#111] px-3 py-2 font-medium font-ethiopic border-b border-white/10">Fasika (ET)</th>
+                  <th className="sticky top-0 z-10 bg-[#111] px-3 py-2 font-medium border-b border-white/10">Fasika (GC)</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-white/5">
@@ -156,10 +156,10 @@ export default function YearView() {
                   const f = b.feasts["TINSAYE"];
                   const fGc = etToGc(y, f.month, f.day);
                   return (
-                    <tr key={y} className={`hover:bg-[#111] transition-colors ${y === year ? 'bg-white/5 text-white' : ''}`}>
+                    <tr key={y} className={`fasika-row transition-colors ${y === year ? 'active-row' : ''}`}>
                       <td className="px-3 py-2">{y}</td>
                       <td className="px-3 py-2 font-ethiopic">{ev.name}</td>
-                      <td className="px-3 py-2 font-ethiopic text-white">{ethiopianMonths[f.month - 1]} {f.day}</td>
+                      <td className="px-3 py-2 font-ethiopic row-text-highlight">{ethiopianMonths[f.month - 1]} {f.day}</td>
                       <td className="px-3 py-2">{fGc.toDateString()}</td>
                     </tr>
                   );

@@ -183,6 +183,15 @@ html.light-mode .bg-\[\#050505\].rounded-2xl { background-color: var(--bg-card) 
 html.light-mode .bg-\[\#050505\].p-3,
 html.light-mode .hover\:bg-\[\#0a0a0a\]:hover { background-color: var(--bg-muted) !important; }
 
+/* Custom Validation Table Rows */
+.fasika-row:hover { background-color: #111111; }
+.active-row { background-color: rgba(255,255,255,0.05); color: #ffffff; }
+.row-text-highlight { color: #ffffff; }
+
+html.light-mode .fasika-row:hover { background-color: rgba(0,0,0,0.04) !important; }
+html.light-mode .active-row { background-color: rgba(0,0,0,0.05) !important; color: #1a1a1a !important; }
+html.light-mode .row-text-highlight { color: #1a1a1a !important; }
+
 /* Code/mono blocks */
 html.light-mode code,
 html.light-mode .font-mono { color: #2d4a7a !important; }
