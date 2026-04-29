@@ -68,17 +68,25 @@ function getSeasonForObs(obsId: string): string {
 
 // Map the raw JSON data to our Observance interface
 export const OBSERVANCES: Observance[] = Object.entries(eecmyData.observances).map(([id, data]: [string, any]) => {
-  const i18n = eecmyData.i18n;
+  const eng = eecmyData.i18n.eng as unknown as {
+    holidays: Record<string, string>;
+    themes: Record<string, string>;
+    prayers: Record<string, string>;
+  };
+  const amh = eecmyData.i18n.amh as unknown as {
+    holidays: Record<string, string>;
+    prayers: Record<string, string>;
+  };
   return {
     id,
-    nameEn: i18n.eng.holidays[id] || id,
-    nameAm: i18n.amh.holidays[id] || id,
+    nameEn: eng.holidays[id] || id,
+    nameAm: amh.holidays[id] || id,
     season: getSeasonForObs(id),
-    theme: i18n.eng.themes[id] || "",
+    theme: eng.themes[id] || "",
     color: COLOR_CODE_MAP[data.color] || "white",
     hasPrayer: data.hasPrayer,
-    prayerEn: i18n.eng.prayers[id],
-    prayerAm: i18n.amh.prayers[id],
+    prayerEn: eng.prayers[id],
+    prayerAm: amh.prayers[id],
     series: data.readings.map((r: string[]) => ({
       ot: r[0],
       epistle: r[1],
