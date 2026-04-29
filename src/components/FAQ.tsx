@@ -63,7 +63,7 @@ const faqs = [
   {
     question: "I have EOTC or Mekane Yesus liturgical data that might help. How do I get in touch?",
     answer:
-      "Please contact us at contact@doxaplc.com. We are specifically looking for the EECMY four-year lectionary tables, Mekane Yesus Sunday sermon theme assignments, and EOTC sanctoral calendar data keyed by Ethiopian date. Even a physical booklet or a photograph of printed materials would be genuinely useful.",
+      "Please contact us at [EMAIL_ADDRESS] . We are specifically looking for the EECMY four-year lectionary tables, Mekane Yesus Sunday sermon theme assignments, and EOTC sanctoral calendar data keyed by Ethiopian date. Even a physical booklet or a photograph of printed materials would be genuinely useful.",
   },
 ];
 

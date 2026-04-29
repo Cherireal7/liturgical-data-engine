@@ -29,12 +29,20 @@ export default function Home() {
       {/* Top Navigation Bar */}
       <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/80 backdrop-blur-[12px]">
         <div className="flex h-14 items-center justify-between px-4 sm:px-6">
-          <Link
-            href="/documentation"
-            className="text-xs sm:text-sm text-[#888] hover:text-white transition-colors border border-white/10 px-3.5 py-1.5 rounded-md hover:border-white/30"
-          >
-            Documentation
-          </Link>
+          <div className="flex items-center gap-2">
+            <Link
+              href="/mekane-yesus"
+              className="text-xs sm:text-sm text-[#C8943A] hover:text-[#e0b05b] font-medium transition-colors border border-[#C8943A]/30 bg-[#C8943A]/10 px-3.5 py-1.5 rounded-md hover:border-[#C8943A]/50"
+            >
+              Mekane Yesus Lectionary
+            </Link>
+            <Link
+              href="/documentation"
+              className="text-xs sm:text-sm text-[#888] hover:text-white transition-colors border border-white/10 px-3.5 py-1.5 rounded-md hover:border-white/30"
+            >
+              Documentation
+            </Link>
+          </div>
           <nav className="hidden md:flex flex-wrap gap-6 text-sm text-[#888] font-medium">
             {sections.map((sec) => (
               <a
@@ -101,6 +109,12 @@ export default function Home() {
               >
                 Explore the Calendar
               </a>
+              <Link
+                href="/mekane-yesus"
+                className="px-6 py-2.5 border border-[#C8943A]/40 bg-[#C8943A]/10 text-[#C8943A] text-sm font-semibold rounded-lg hover:border-[#C8943A]/60 hover:bg-[#C8943A]/20 transition-colors"
+              >
+                View Mekane Yesus Lectionary
+              </Link>
               <Link
                 href="/documentation"
                 className="px-6 py-2.5 border border-white/20 text-[#aaa] text-sm font-medium rounded-lg hover:border-white/40 hover:text-white transition-colors"
