@@ -169,7 +169,7 @@ export default function Home() {
         </section>
 
         {/* Section 5: Converter */}
-        <section id="converter" className="w-full bg-[linear-gradient(to_bottom,#000,#050505)]">
+        <section id="converter" className="w-full bg-[#050505]">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-14 md:py-16 flex justify-center">
             <Converter />
           </div>

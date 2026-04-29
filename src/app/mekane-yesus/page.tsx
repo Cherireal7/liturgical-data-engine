@@ -9,12 +9,12 @@ import MekaneGeometry from "@/components/MekaneGeometry";
 import ThemeToggle from "@/components/ThemeToggle";
 
 const SEASON_COLORS: Record<string, { hex: string; bg: string; text: string; border: string; glow: string }> = {
-  gold:   { hex: "#C8943A", bg: "bg-amber-950/60",    text: "text-amber-300",    border: "border-amber-700/40",   glow: "shadow-amber-900/40"   },
-  violet: { hex: "#7C3AED", bg: "bg-violet-950/60",   text: "text-violet-300",   border: "border-violet-700/40",  glow: "shadow-violet-900/40"  },
-  white:  { hex: "#FFFFFF", bg: "bg-white/10",         text: "text-white",        border: "border-white/30",       glow: "shadow-white/10"       },
-  red:    { hex: "#DC2626", bg: "bg-red-950/60",       text: "text-red-300",      border: "border-red-700/40",     glow: "shadow-red-900/40"     },
-  green:  { hex: "#059669", bg: "bg-emerald-950/60",   text: "text-emerald-300",  border: "border-emerald-700/40", glow: "shadow-emerald-900/40" },
-  black:  { hex: "#6B7280", bg: "bg-gray-900/60",      text: "text-gray-400",     border: "border-gray-700/40",    glow: "shadow-gray-900/40"    },
+  gold:   { hex: "#C8943A", bg: "bg-(--color-s-gold-bg)",    text: "text-(--color-s-gold-text)",    border: "border-(--color-s-gold-border)",   glow: "shadow-amber-900/40"   },
+  violet: { hex: "#7C3AED", bg: "bg-(--color-s-violet-bg)",  text: "text-(--color-s-violet-text)",  border: "border-(--color-s-violet-border)", glow: "shadow-violet-900/40"  },
+  white:  { hex: "#FFFFFF", bg: "bg-white/10",               text: "text-white",                    border: "border-white/30",                   glow: "shadow-white/10"       },
+  red:    { hex: "#DC2626", bg: "bg-(--color-s-red-bg)",     text: "text-(--color-s-red-text)",     border: "border-(--color-s-red-border)",    glow: "shadow-red-900/40"     },
+  green:  { hex: "#059669", bg: "bg-(--color-s-green-bg)",   text: "text-(--color-s-green-text)",   border: "border-(--color-s-green-border)",  glow: "shadow-emerald-900/40" },
+  black:  { hex: "#6B7280", bg: "bg-gray-900/60",            text: "text-gray-400",                 border: "border-gray-700/40",                glow: "shadow-gray-900/40"    },
 };
 
 const SEASON_ORDER = ["newyear","advent","christmas","epiphany","pre_lent","lent","holy_week","easter","ascension","pentecost","trinity","end_of_year","fixed_feasts"];
@@ -76,7 +76,6 @@ export default function MekaneYesusPage() {
 
   return (
     <div className="relative min-h-screen bg-black text-white font-sans overflow-x-hidden flex flex-col">
-      <MekaneGeometry />
 
       {/* Header */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-black/80 backdrop-blur-xl">
@@ -94,8 +93,8 @@ export default function MekaneYesusPage() {
             ))}
           </nav>
           <div className="flex items-center gap-2">
-            <div className="hidden sm:flex items-center gap-2 rounded-lg border border-amber-700/30 bg-amber-950/30 px-3 py-1.5 text-[10px]">
-              <span className="text-amber-300 font-ethiopic">{SERIES_NAMES_AM[si]}</span>
+            <div className="hidden sm:flex items-center gap-2 rounded-lg border border-(--color-s-gold-border) bg-(--color-s-gold-bg) px-3 py-1.5 text-[10px]">
+              <span className="text-(--color-s-gold-text) font-ethiopic">{SERIES_NAMES_AM[si]}</span>
               <span className="text-[#666]">Year of {SERIES_NAMES[si]}</span>
             </div>
             <ThemeToggle />
@@ -195,18 +194,18 @@ export default function MekaneYesusPage() {
             {explorerYears.map(ey => {
               const isActive = ey.year === (getSeriesForYear(todayEt.year) === getSeriesForYear(ey.year) ? ey.year : -1);
               return (
-                <div key={ey.year} className="rounded-2xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-amber-700/30 transition-all group">
-                  <div className="bg-white/[0.04] px-8 py-5 flex justify-between items-center border-b border-white/10">
+                <div key={ey.year} className="rounded-xl border border-white/10 bg-white/[0.02] overflow-hidden hover:border-amber-700/30 transition-all group">
+                  <div className="bg-white/[0.04] px-5 py-3.5 flex justify-between items-center border-b border-white/10">
                     <div>
-                      <div className="text-2xl font-bold text-white">ET {ey.year}</div>
+                      <div className="text-xl font-bold text-white">ET {ey.year}</div>
                       <div className="text-xs text-[#555]">GC {ey.year + 7}–{ey.year + 8}</div>
                     </div>
                     <div className="text-right">
-                      <div className="text-lg font-bold text-amber-400">{ey.ev}</div>
+                      <div className="text-base font-bold text-amber-400">{ey.ev}</div>
                       <div className="text-[10px] text-[#555] uppercase tracking-widest">Evangelist</div>
                     </div>
                   </div>
-                  <div className="p-8 space-y-5">
+                  <div className="p-4 space-y-3.5">
                     {[
                       { l: "Nineveh (Anchor)", v: `${ethiopianMonths[ey.result.nineveh.month-1]} ${ey.result.nineveh.day}` },
                       { l: "Great Lent",       v: `${ethiopianMonths[ey.result.feasts.ABIY_TSOME.month-1]} ${ey.result.feasts.ABIY_TSOME.day}` },
@@ -256,14 +255,14 @@ export default function MekaneYesusPage() {
                       const isExp = expandedObs === o.id;
                       const reading = o.series[si];
                       return (
-                        <div key={o.id} className={`rounded-2xl border transition-all duration-300 overflow-hidden ${isExp ? `${oc.border} bg-white/[0.06]` : "border-white/5 bg-white/[0.01] hover:border-white/10"}`}>
-                          <button onClick={() => setExpandedObs(isExp ? null : o.id)} className="w-full text-left p-6">
-                            <div className="font-ethiopic text-lg font-bold text-white mb-1">{o.nameAm}</div>
-                            <div className={`text-xs font-bold uppercase tracking-tight mb-3 ${oc.text}`}>{o.nameEn}</div>
-                            <div className="text-[11px] text-[#555] leading-relaxed line-clamp-2 mb-4">{o.theme}</div>
+                        <div key={o.id} className={`rounded-lg border transition-all duration-300 overflow-hidden ${isExp ? `${oc.border} bg-white/[0.06]` : "border-white/5 bg-white/[0.01] hover:border-white/10"}`}>
+                          <button onClick={() => setExpandedObs(isExp ? null : o.id)} className="w-full text-left p-4">
+                            <div className="font-ethiopic text-base font-bold text-white mb-1">{o.nameAm}</div>
+                            <div className={`text-[11px] font-bold uppercase tracking-tight mb-2.5 ${oc.text}`}>{o.nameEn}</div>
+                            <div className="text-[10px] text-[#555] leading-relaxed line-clamp-2 mb-3.5">{o.theme}</div>
                             <div className="flex items-center gap-2">
-                              <span className={`text-[9px] px-2.5 py-1 rounded-md border font-bold uppercase ${oc.bg} ${oc.text} ${oc.border}`}>{o.color}</span>
-                              {o.hasPrayer && <span className="text-[9px] text-[#444] border border-white/5 px-2 py-1 rounded-md">✓ Prayer</span>}
+                              <span className={`text-[9px] px-2 py-0.5 rounded-md border font-bold uppercase ${oc.bg} ${oc.text} ${oc.border}`}>{o.color}</span>
+                              {o.hasPrayer && <span className="text-[9px] text-[#444] border border-white/5 px-2 py-0.5 rounded-md">✓ Prayer</span>}
                             </div>
                           </button>
                           {isExp && (
@@ -306,12 +305,12 @@ export default function MekaneYesusPage() {
               { n:"04", t:"Metqi",   v: algo.metqi,   d:"Ecclesiastical new moon anchor. (wenber × 19) % 30." },
               { n:"05", t:"Tewsak", v: algo.tewsak,  d:"Weekday offset to align Nineveh with Monday." },
             ].map(step => (
-              <div key={step.t} className="flex gap-8 items-center">
-                <div className="w-20 h-20 shrink-0 rounded-2xl border border-amber-700/30 bg-amber-950/20 flex items-center justify-center text-3xl font-bold text-amber-400">{step.v}</div>
+              <div key={step.t} className="flex gap-6 items-center">
+                <div className="w-16 h-16 shrink-0 rounded-xl border border-amber-700/30 bg-amber-950/20 flex items-center justify-center text-2xl font-bold text-amber-400">{step.v}</div>
                 <div>
                   <div className="text-[10px] text-[#444] uppercase tracking-widest mb-1">Step {step.n}</div>
-                  <div className="text-xl font-bold text-white mb-1">{step.t}</div>
-                  <div className="text-sm text-[#888]">{step.d}</div>
+                  <div className="text-lg font-bold text-white mb-0.5">{step.t}</div>
+                  <div className="text-xs text-[#888]">{step.d}</div>
                 </div>
               </div>
             ))}
@@ -340,10 +339,10 @@ export default function MekaneYesusPage() {
             </div>
             {COMPARISON_ROWS.map(([feature, eotc, eecmy, same]) => (
               <div key={String(feature)} className="grid grid-cols-[1.5fr_1fr_1fr_52px] border-b border-white/[0.05] hover:bg-white/[0.02] transition-colors">
-                <div className="px-6 py-5 text-sm text-[#aaa] font-medium">{feature}</div>
-                <div className="px-6 py-5 text-sm text-white">{eotc}</div>
-                <div className="px-6 py-5 text-sm text-white">{eecmy}</div>
-                <div className="px-6 py-5 flex items-center justify-center">
+                <div className="px-6 py-3.5 text-sm text-[#aaa] font-medium">{feature}</div>
+                <div className="px-6 py-3.5 text-sm text-white">{eotc}</div>
+                <div className="px-6 py-3.5 text-sm text-white">{eecmy}</div>
+                <div className="px-6 py-3.5 flex items-center justify-center">
                   <div className={`w-2 h-2 rounded-full ${same ? "bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" : "bg-white/10"}`} />
                 </div>
               </div>

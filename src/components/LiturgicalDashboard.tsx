@@ -79,7 +79,7 @@ export default function LiturgicalDashboard() {
   ];
 
   return (
-    <div className="grid w-full gap-4 sm:grid-cols-2">
+    <div className="max-w-xl mx-auto w-full">
       {/* Today spotlight */}
       <section className="rounded-lg border border-white/10 bg-black p-4">
         <div className="mb-3 flex items-center justify-between">
@@ -112,26 +112,6 @@ export default function LiturgicalDashboard() {
               <span className={`h-2.5 w-2.5 rounded-sm ${swatch}`} />
               {label}
             </span>
-          ))}
-        </div>
-      </section>
-
-      {/* Feast chain */}
-      <section className="rounded-lg border border-white/10 bg-black p-4">
-        <h2 className="mb-4 text-sm font-bold text-white">Movable Feast Chain</h2>
-        <div className="flex flex-col gap-2">
-          {relationNodes.map((node, index) => (
-            <div key={node.key} className="flex items-center gap-2">
-              <div className="flex-1 rounded-md border border-white/10 bg-[#050505] px-3 py-2 flex items-center justify-between">
-                <span className="text-xs font-semibold text-white">{node.label}</span>
-                <span className="text-[11px] font-ethiopic text-[#888]">
-                  {ethiopianMonths[node.value.month - 1]} {node.value.day}
-                </span>
-              </div>
-              {index < relationNodes.length - 1 && (
-                <div className="w-px h-4 bg-white/15 mx-auto" />
-              )}
-            </div>
           ))}
         </div>
       </section>
